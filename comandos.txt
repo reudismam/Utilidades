@@ -1,0 +1,12 @@
+-- Arquivos ocultos OS X:
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+-- Alias:
+alias NAME= 'comando'
+
+-- procurar e excluir vários arquivos pela linha de comando:
+find ./ -name 'desktop.ini' -exec rm {} \;
+
+-- procurar arquivo por nome ou extensão:
+find ./ -name "desktop.ini"
+find ./ -name "*.ini"
