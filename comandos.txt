@@ -1,5 +1,5 @@
 -- Arquivos ocultos OS X:
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true [false]
 
 -- Alias:
 alias NAME= 'comando'
