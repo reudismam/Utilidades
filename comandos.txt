@@ -28,3 +28,5 @@ chflags nohidden -> torna visível
 
 git config --global credential.helper osxkeychain
 # helper para não ter que ficar digitando senha por https
+
+setxkbmap -model abnt2 -layout br   //ajusta teclado ubuntu
