@@ -2,7 +2,7 @@
 defaults write com.apple.finder AppleShowAllFiles -bool true [false]
 
 -- Alias:
-alias NAME= 'comando'
+alias NAME="comando"
 
 -- procurar e excluir vários arquivos pela linha de comando:
 find ./ -name 'desktop.ini' -exec rm {} \;
