@@ -32,3 +32,4 @@ git config --global credential.helper osxkeychain
 setxkbmap -model abnt2 -layout br   //ajusta teclado ubuntu
 
 history | grep 'alguma coisa' -> filtra essa alguma coisa pra tu
+grep -rin "platform-tools/adb" ./* -> procura pela string em todos os arquivos recursivamemte
