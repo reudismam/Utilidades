@@ -21,7 +21,9 @@ ln -s /path/to/original /path/to/symlink
       └───────┬───────┘
               └── the path to the original file/folder
                   can use . or ~ or other relative paths
-
+                  
+(Ubuntu)            
+copy the symbolic link to /usr/local/bin/ to execute from the terminal
 
 chflags hidden -> oculta arquivos
 chflags nohidden -> torna visível
