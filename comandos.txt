@@ -33,3 +33,6 @@ setxkbmap -model abnt2 -layout br   //ajusta teclado ubuntu
 
 history | grep 'alguma coisa' -> filtra essa alguma coisa pra tu
 grep -rin "platform-tools/adb" ./* -> procura pela string em todos os arquivos recursivamemte
+
+vboxmanage guestproperty set Custom\ Tablet\ -\ 4.4.4\ -\ API\ 19\ -\ 2560x1600 "vbox_dpi" "233"
+----> ajusta densidade genymotion
