@@ -11,6 +11,12 @@ find ./ -name 'desktop.ini' -exec rm {} \;
 find ./ -name "desktop.ini"
 find ./ -name "*.ini"
 
+-- lista todos os diretorios e seu respectivo tamanho
+for dirs in $(ls --color=never -l | grep "^d" | awk '{print $9}'); do du -hs $dirs;done
+
+-- mostra o tamanho do diretorio
+du -lhs /path/to/folder
+
 -- links simbólicos para usar no terminal
 ┌── ln(1) link, ln -- make links
 │   ┌── Create a symbolic link.
