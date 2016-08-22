@@ -59,3 +59,6 @@ sudo chown -R $USER:admin /usr/local/include
 
 --configurar layout do teclado
 sudo dpkg-reconfigure keyboard-configuration
+
+Adding a user to a group: sudo adduser user group
+Removing a user from a group: sudo deluser user group
