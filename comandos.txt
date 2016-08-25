@@ -1,65 +1,68 @@
--- Arquivos ocultos OS X:
-defaults write com.apple.finder AppleShowAllFiles -bool true [false]
+SHELL:
+    -- Arquivos ocultos OS X:
+    defaults write com.apple.finder AppleShowAllFiles -bool true [false]
 
--- Alias:
-alias NAME="comando"
+    -- Alias:
+    alias NAME="comando"
 
--- procurar e excluir vários arquivos pela linha de comando:
-find ./ -name 'desktop.ini' -exec rm {} \;
+    -- procurar e excluir vários arquivos pela linha de comando:
+    find ./ -name 'desktop.ini' -exec rm {} \;
 
--- procurar arquivo por nome ou extensão:
-find ./ -name "desktop.ini"
-find ./ -name "*.ini"
+    -- procurar arquivo por nome ou extensão:
+    find ./ -name "desktop.ini"
+    find ./ -name "*.ini"
 
--- lista todos os diretorios e seu respectivo tamanho
-for dirs in $(ls --color=never -l | grep "^d" | awk '{print $9}'); do du -hs $dirs;done
+    -- lista todos os diretorios e seu respectivo tamanho
+    for dirs in $(ls --color=never -l | grep "^d" | awk '{print $9}'); do du -hs $dirs;done
 
--- mostra o tamanho do diretorio
-du -lhs /path/to/folder
+    -- mostra o tamanho do diretorio
+    du -lhs /path/to/folder
 
--- links simbólicos para usar no terminal
-┌── ln(1) link, ln -- make links
-│   ┌── Create a symbolic link.
-│   │                         ┌── the path to the intended symlink
-│   │                         │   can use . or ~ or other relative paths
-│   │                   ┌─────┴────────┐
-ln -s /path/to/original /path/to/symlink
-      └───────┬───────┘
-              └── the path to the original file/folder
-                  can use . or ~ or other relative paths
+    -- links simbólicos para usar no terminal
+    ┌── ln(1) link, ln -- make links
+    │   ┌── Create a symbolic link.
+    │   │                         ┌── the path to the intended symlink
+    │   │                         │   can use . or ~ or other relative paths
+    │   │                   ┌─────┴────────┐
+    ln -s /path/to/original /path/to/symlink
+          └───────┬───────┘
+                  └── the path to the original file/folder
+                      can use . or ~ or other relative paths
                   
-(Ubuntu)            
-copy the symbolic link to /usr/local/bin/ to execute from the terminal
+    (Ubuntu)            
+    copy the symbolic link to /usr/local/bin/ to execute from the terminal
 
-chflags hidden -> oculta arquivos
-chflags nohidden -> torna visível
+    chflags hidden -> oculta arquivos
+    chflags nohidden -> torna visível
 
-git config --global credential.helper osxkeychain
-# helper para não ter que ficar digitando senha por https
+    setxkbmap -model abnt2 -layout br   //ajusta teclado ubuntu
 
-setxkbmap -model abnt2 -layout br   //ajusta teclado ubuntu
+    history | grep 'alguma coisa' -> filtra essa alguma coisa pra tu
+    grep -rin "platform-tools/adb" ./* -> procura pela string em todos os arquivos recursivamemte
 
-history | grep 'alguma coisa' -> filtra essa alguma coisa pra tu
-grep -rin "platform-tools/adb" ./* -> procura pela string em todos os arquivos recursivamemte
+    ----> ajusta densidade genymotion
+    vboxmanage guestproperty set Custom\ Tablet\ -\ 4.4.4\ -\ API\ 19\ -\ 2560x1600 "vbox_dpi" "233"
 
-vboxmanage guestproperty set Custom\ Tablet\ -\ 4.4.4\ -\ API\ 19\ -\ 2560x1600 "vbox_dpi" "233"
-----> ajusta densidade genymotion
+    -- muda dono e grupo dos aquivos da pasta
+    sudo chown -R $USER:admin /usr/local/include
 
-/*
-* Ignora arquivos localmente assumindo que nunca houve mudança
-**/
-This will tell git you want to start ignoring the changes to the file
-git update-index --assume-unchanged path/to/file
+    --configurar layout do teclado
+    sudo dpkg-reconfigure keyboard-configuration
 
-When you want to start keeping track again
-git update-index --no-assume-unchanged path/to/file
+    Grupos: /etc/group
+    Adding a user to a group: sudo adduser user group
+    Removing a user from a group: sudo deluser user group
 
--- muda dono e grupo dos aquivos da pasta
-sudo chown -R $USER:admin /usr/local/include
 
---configurar layout do teclado
-sudo dpkg-reconfigure keyboard-configuration
+GIT:
+    /*
+    * Ignora arquivos localmente assumindo que nunca houve mudança
+    **/
+    This will tell git you want to start ignoring the changes to the file
+    git update-index --assume-unchanged path/to/file
 
-Grupos: /etc/group
-Adding a user to a group: sudo adduser user group
-Removing a user from a group: sudo deluser user group
+    When you want to start keeping track again
+    git update-index --no-assume-unchanged path/to/file
+
+    # helper para não ter que ficar digitando senha por https
+    git config --global credential.helper osxkeychain
