@@ -61,8 +61,11 @@ GIT:
     This will tell git you want to start ignoring the changes to the file
     git update-index --assume-unchanged path/to/file
 
-    When you want to start keeping track again
+    # When you want to start keeping track again
     git update-index --no-assume-unchanged path/to/file
 
     # helper para não ter que ficar digitando senha por https
     git config --global credential.helper osxkeychain
+
+    # get all commits id
+    git log --pretty="%H" > file.txt
