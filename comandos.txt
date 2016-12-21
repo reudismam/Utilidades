@@ -1,4 +1,8 @@
 SHELL:
+    -- Mudar local de arquivar screenshot OS X:
+    defaults write com.apple.screencapture location ~/Desktop/screenCapture/
+    killall SystemUIServer
+    
     -- Arquivos ocultos OS X:
     defaults write com.apple.finder AppleShowAllFiles -bool true [false]
 
