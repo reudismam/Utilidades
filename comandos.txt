@@ -8,6 +8,9 @@ SHELL:
 
     -- Alias:
     alias NAME="comando"
+    # some ls aliases
+    alias ll='ls -ahlFtr'
+    alias l='ls -lhFtr'
 
     -- procurar e excluir vários arquivos pela linha de comando:
     find ./ -name 'desktop.ini' -exec rm {} \;
