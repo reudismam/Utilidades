@@ -24,6 +24,8 @@ SHELL:
 
     -- mostra o tamanho do diretorio
     du -lhs /path/to/folder
+    -- tamanho geral do disco
+    df -h
 
     -- links simbólicos para usar no terminal
     ┌── ln(1) link, ln -- make links
