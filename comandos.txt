@@ -50,7 +50,7 @@ SHELL:
     grep -rin "platform-tools/adb" ./* -> procura pela string em todos os arquivos recursivamemte
     grep -rnw '/path/to/somewhere/' -e "pattern"
     
-    -----> desvia toda a saída do console para o arquivo e mostra a saída no console também
+    ----> desvia toda a saída do console para o arquivo e mostra a saída no console também
     command -option | tee log
 
     ----> ajusta densidade genymotion
