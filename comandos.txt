@@ -45,10 +45,16 @@ SHELL:
     chflags nohidden -> torna visível
 
     setxkbmap -model abnt2 -layout br   //ajusta teclado ubuntu
-
-    history | grep 'alguma coisa' -> filtra essa alguma coisa pra tu
-    grep -rin "platform-tools/adb" ./* -> procura pela string em todos os arquivos recursivamemte
+    
+    ----> filtra essa alguma coisa pra tu
+    history | grep 'alguma coisa' 
+    
+    ----> procura pela string em todos os arquivos recursivamemte
+    grep -rin "platform-tools/adb" ./*
     grep -rnw '/path/to/somewhere/' -e "pattern"
+    
+    ----> procura com regex que possui quebra de linha
+    pcregrep -Mrin "teste 1.*\n.*teste 3" ./
     
     ----> desvia toda a saída do console para o arquivo e mostra a saída no console também
     command -option | tee log
