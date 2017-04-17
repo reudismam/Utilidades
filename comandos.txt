@@ -1,4 +1,29 @@
 SHELL:
+
+    -> How do I save terminal output to a file?
+            || visible in terminal ||   visible in file   || existing
+    Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file   
+  ==========++==========+==========++==========+==========++===========
+      >     ||    no    |   yes    ||   yes    |    no    || overwrite
+      >>    ||    no    |   yes    ||   yes    |    no    ||  append
+            ||          |          ||          |          ||
+     2>     ||   yes    |    no    ||    no    |   yes    || overwrite
+     2>>    ||   yes    |    no    ||    no    |   yes    ||  append
+            ||          |          ||          |          ||
+     &>     ||    no    |    no    ||   yes    |   yes    || overwrite
+     &>>    ||    no    |    no    ||   yes    |   yes    ||  append
+            ||          |          ||          |          ||
+   | tee    ||   yes    |   yes    ||   yes    |    no    || overwrite
+   | tee -a ||   yes    |   yes    ||   yes    |    no    ||  append
+            ||          |          ||          |          ||
+   n.e. (*) ||   yes    |   yes    ||    no    |   yes    || overwrite
+   n.e. (*) ||   yes    |   yes    ||    no    |   yes    ||  append
+            ||          |          ||          |          ||
+  |& tee    ||   yes    |   yes    ||   yes    |   yes    || overwrite
+  |& tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
+
+
+
     -- Mudar local de arquivar screenshot OS X:
     defaults write com.apple.screencapture location ~/Desktop/screenCapture/
     killall SystemUIServer
@@ -56,9 +81,6 @@ SHELL:
     ----> procura com regex que possui quebra de linha
     pcregrep -Mrin "teste 1.*\n.*teste 3" ./
     
-    ----> desvia toda a saída do console para o arquivo e mostra a saída no console também
-    command -option | tee log
-
     ----> ajusta densidade genymotion
     vboxmanage guestproperty set Custom\ Tablet\ -\ 4.4.4\ -\ API\ 19\ -\ 2560x1600 "vbox_dpi" "233"
 
