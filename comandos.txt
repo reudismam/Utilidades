@@ -107,3 +107,8 @@ GIT:
 
     # get all commits id
     git log --pretty="%H" > file.txt
+
+JAVA:
+
+    --escolher qual java será utilizado no ubuntu
+    sudo update-alternatives --config java
