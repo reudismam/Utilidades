@@ -20,6 +20,9 @@ SHELL:
   |& tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
 
 
+    -- Criar iso bootavel no OSX a partir de um CD/DVD:
+    $ sudo umount /dev/disk1s0
+    $ dd if=/dev/disk1s0 of=w7.iso
 
     -- Mudar local de arquivar screenshot OS X:
     defaults write com.apple.screencapture location ~/Desktop/screenCapture/
@@ -112,3 +115,5 @@ JAVA:
 
     --escolher qual java será utilizado no ubuntu
     sudo update-alternatives --config java
+    
+
