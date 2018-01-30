@@ -20,7 +20,6 @@ SHELL:
   |& tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
 
 
-
     -- Criar iso bootavel no OSX a partir de um CD/DVD:
     $ sudo umount /dev/disk1s0
     $ dd if=/dev/disk1s0 of=w7.iso
